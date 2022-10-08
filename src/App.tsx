@@ -1,13 +1,11 @@
-import { useState } from 'react'
 
+import MainDesktop from './components/desktop/main'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="w-[100%] h-[100%] bg-blue-900">
-     
-    </div>
+    <>
+     <MainDesktop/>
+    </>
   )
 }
 
