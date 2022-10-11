@@ -11,7 +11,7 @@ const GuionAll=({title,color,cards}:title)=>{
     },[color])
     return(
         <section className="xl:flex xl:flex-grow xl:items-center xl:gap-[8px] xl:mb-[20px]">
-            <div className={`xl:rounded-full xl:w-[14px] xl:h-[14px] xl:bg-${color}`}></div>
+            <div className={`xl:rounded-full xl:w-[14px] xl:h-[14px] bg-${color}`}></div>
             <span className="font-RobotoMono font-bold text-white">{title} ({cards.length})</span>
         </section>
     )
