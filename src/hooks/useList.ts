@@ -1,25 +1,17 @@
 import { useState,useEffect } from "react"
 import {useRef} from "react";
-
+import { listsGeneral } from "../data/lists";
 
 export const useList=()=>{
+
     const [lists,setLists]=useState<any[]>([])
  
-     const ShowData=()=>{
-        const url=import.meta.env.VITE_URL_API_DEN;
-        fetch(url)
-        .then(res=>
-            res.json()
-            )
-        .catch(error=>console.error("error: ",error))
-        .then(response=>setLists(response))
-    
-        
-       
-    } 
+        const generateLists=()=>{
+            setLists(listsGeneral)
+        }
      
         useEffect(()=>{
-            ShowData();
+          generateLists()
         },[])
                 
                 
