@@ -12,10 +12,10 @@ import { useList } from "../../../../hooks/useList";
         {/* /////////////// */}
         <section className='xl:flex xl:flex-row xl:gap-[24px]'> 
 
-        {lists&&lists.map((list:any)=>{
+        {lists&&lists.map((list:any,index:number)=>{
             return (
-                <section >
-                <GuionAll cards={list.cards} color={list.title.color} title={list.title.title} />
+                <section key={index} >
+                <GuionAll index={index} cards={list.cards} color={list.title.color} title={list.title.title} />
                   
                  
                   <article className="xl:flex xl:flex-col xl:gap-[25px]">
