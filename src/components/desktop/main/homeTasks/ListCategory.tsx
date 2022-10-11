@@ -1,13 +1,12 @@
-import React from 'react'
+
 import CartaTask from "./CartaTask";
 import GuionAll from "./GuionAll";
-import GuionDoing from "./GuionDoing";
-import GuionDone from "./GuionDone";
+
 import NewColumn from "./NewColumn";
 import { useList } from "../../../../hooks/useList";
  const ListCategory = () => {
     const {lists}=useList();
-    console.log(lists)
+
   return (
     <div>
         {/* /////////////// */}

@@ -2,7 +2,7 @@ export const listsGeneral=[
       
             {
         id:1,
-        title:{title:"Todo",color:"bg-guiontodo"},
+        title:{title:"Todo","color":"bg-guiontodo"},
         totalCards:null,
         cards:[
             {
