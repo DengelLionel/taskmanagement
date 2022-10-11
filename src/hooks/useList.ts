@@ -4,7 +4,7 @@ import { listsGeneral } from "../data/lists";
 
 export const useList=()=>{
 
-    const [lists,setLists]=useState<any[]>([])
+    const [lists,setLists]=useState<any>()
  
         const generateLists=()=>{
             setLists(listsGeneral)
