@@ -2,7 +2,7 @@ export const listsGeneral=[
       
             {
         "id":1,
-        "title":{"title":"Todo","color":"bg-guiontodo"},
+        "title":{"title":"Todo","color":"guiontodo"},
         "totalCards":null,
         "cards":[
             {
@@ -19,7 +19,7 @@ export const listsGeneral=[
     },
     {
         "id":2,
-        "title":{"title":"Doing","color":"bg-guiondoing"},
+        "title":{"title":"Doing","color":"guiondoing"},
         "totalCards":null,
         "cards":[
             {
