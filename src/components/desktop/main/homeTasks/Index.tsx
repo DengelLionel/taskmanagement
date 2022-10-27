@@ -4,7 +4,7 @@ const Index=()=>{
     
    
     return(
-        <section className="lg:p-[15px] xl:mt-[90px] xl:w-[1040px] xl:h-[auto] "> 
+        <section className="xl:overflow-y-hidden lg:p-[15px] xl:mt-[90px] xl:w-[1040px] "> 
 
        <ListCategory/>
        
