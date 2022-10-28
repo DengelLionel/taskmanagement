@@ -1,18 +1,40 @@
 import { useState,useEffect } from "react"
 import {useRef} from "react";
-
-
+import {lists,listSub} from "../Datauser/substasks";
+import { useContext } from "react";
+import { ListCardBoardContext } from "../context/ListsCardsBoards";
 export const useList=()=>{
-    const [lists,setLists]=useState<any[]>([])
- 
+    const [listss,setListss]=useState<any[]>([])
+    
+    const {title,description,updateCard,setOpenAddList,dataInputSubTask}=useContext(ListCardBoardContext)
+    const AddCard=()=>{
+        
+        const url=lists;
+          console.log("substext ",dataInputSubTask)
+        url?.map((list:any)=>{
+            if(list.id===1){
+                /* const addListSubContent=listSub?.map((list:any)=>) */
+             
+              
+                let listsub:any=[{mount:listSub.length+" substacks",list:dataInputSubTask}]; 
+                list.cards.push({id:list.cards.length+1,title:title,description:description,substasks:[]})
+                list.cards[list.cards.length-1].substasks.push(listsub);
+                console.log("array okk",list.cards[list.cards.length-1])
+                setOpenAddList(false);
+            }
+            
+        })
+        
+    }
      const ShowData=()=>{
-        const url=import.meta.env.VITE_URL_API_DEN;
-        fetch(url)
+      /*   const url=import.meta.env.VITE_URL_API_DEN; */
+        setListss(lists);
+      /*   fetch(url)
         .then(res=>
             res.json()
             )
         .catch(error=>console.error("error: ",error))
-        .then(response=>setLists(response))
+        .then(response=>setLists(response)) */
     
         
        
@@ -20,7 +42,10 @@ export const useList=()=>{
      
         useEffect(()=>{
             ShowData();
-        },[])
+            if(updateCard===true){
+                ShowData();
+            }
+        },[updateCard])
                 
                 
    /*  const [listAll,setListAll]=useState(['Item1','Item2','Item3']);
@@ -66,6 +91,6 @@ export const useList=()=>{
         e.preventDefault();
         e.dataTransfer.dropEffect="move";
     } */
-    return {lists}
+    return {listss,AddCard}
     /* listAll,setListAll,listDoing,setListDoing,dragStart,dragEnter,drop,dropDoing,dragOver */
 }

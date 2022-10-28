@@ -7,14 +7,14 @@ import NewColumn from "./NewColumn";
 import { useList } from "../../../../hooks/useList";
 
  const ListCategory = () => {
-    const {lists}=useList();
+    const {listss}=useList();
 
   return (
   
       
         <section className='xl:flex xl:flex-row xl:gap-[24px]'> 
 
-        {lists&&lists.map((list:any)=>{
+        {listss&&listss.map((list:any)=>{
             return (
                 <section key={list.id}>
                 <GuionAll cards={list.cards} color={list.title.color} title={list.title.title} />

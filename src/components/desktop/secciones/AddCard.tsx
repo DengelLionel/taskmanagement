@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import Modal from '../main/Modal'
 import { useAddListAndCardBoard } from '../../../hooks/useAddListAndCardBoard';
+import { useList } from '../../../hooks/useList';
 import { useContext } from 'react';
 /* import { useRef } from 'react'; */
 import { listSub } from "../../../Datauser/substasks";
 import AddSubstasks from './AddSubstasks';
 import { ListCardBoardContext } from '../../../context/ListsCardsBoards';
 const AddCard = () => {
-  const {CloseAddList,setTitle,setDescription,mountSubstask}=useAddListAndCardBoard()
-  const {valorNewSubTask,setValueDelete,booleanSubTask,setBooleanSubTask,list,setList}=useContext(ListCardBoardContext)
+  const {CloseAddList,mountSubstask}=useAddListAndCardBoard()
+  const {AddCard}=useList()
+  const {valorNewSubTask,setValueDelete,booleanSubTask,setBooleanSubTask,list,setList,setTitle,setDescription,updateCard,setUpdateCard}=useContext(ListCardBoardContext)
   
  
   const DataUpdate=()=>{
@@ -64,7 +66,7 @@ const AddCard = () => {
 
         <section className='flex flex-col justify-center items-center gap-[15px] mt-[10px]'>
         <button onClick={()=>mountSubstask()} className='bg-whitePale w-[463px] text-blueTwo font-Roboto font-bold text-[16px] rounded-bl-full rounded-br-full rounded-tr-full rounded-tl-full pt-[14px] pb-[14px] ' >+ Add New Substask</button>
-        <button className='bg-buttoncolor w-[463px] text-white font-Roboto font-bold text-[20px] rounded-bl-full rounded-br-full rounded-tr-full rounded-tl-full pt-[14px] pb-[14px]'>+ Create Task</button>
+        <button onClick={()=>{AddCard();setUpdateCard(!updateCard)}}  className='bg-buttoncolor w-[463px] text-white font-Roboto font-bold text-[20px] rounded-bl-full rounded-br-full rounded-tr-full rounded-tl-full pt-[14px] pb-[14px]'>+ Create Task</button>
         </section>
        
     </Modal>

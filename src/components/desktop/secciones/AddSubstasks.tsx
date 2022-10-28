@@ -11,7 +11,7 @@ interface addSubstask{
 const AddSubstasks=({value,deleteItem}:addSubstask)=>{
     
     const {DataDelete}=useAddListAndCardBoard()
- const {setBooleanSubTask,booleanSubTask,valueDelete}=useContext(ListCardBoardContext);
+ const {setBooleanSubTask,booleanSubTask,valueDelete,dataInputSubTask,setDataInputSubTask}=useContext(ListCardBoardContext);
 /* const list=JSON.parse(localStorage.getItem("listas")) */
    
 
@@ -19,7 +19,11 @@ const AddSubstasks=({value,deleteItem}:addSubstask)=>{
     console.log("bool ",booleanSubTask)
     return(
       <article key={value} className='xl:flex xl:flex-grow xl:gap-[35px] transition-all duration-1000'>
-      <input className='xl:w-[463px] xl:p-[15px] xl:outline-none xl:bg-transparent xl:border-2 xl:border-bordeInput xl:mt-[11px] xl:mb-[11px] xl:text-white xl:pl-[40px] ' type="text"
+      <input key={value}   onChange={(e) =>
+  setDataInputSubTask((prev:any) => ({
+    ...prev,
+    [value]: { id:value, title: e.target.value }
+  }))} className='xl:w-[463px] xl:p-[15px] xl:outline-none xl:bg-transparent xl:border-2 xl:border-bordeInput xl:mt-[11px] xl:mb-[11px] xl:text-white xl:pl-[40px] ' type="text"
       placeholder='e.g Take Coofe Break' 
       /> 
       <button onClick={()=>{deleteItem();setBooleanSubTask(!booleanSubTask);DataDelete()}}>

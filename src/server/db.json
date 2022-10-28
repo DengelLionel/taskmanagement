@@ -8,12 +8,12 @@
         {
         "id":1,
         "title":"Item1 Card",
-        "substacks":"0 of 3 substacks"
+        "substacks":[]
     },
     {
         "id":2,
         "title":"Item2 Card",
-        "substacks":"0 of 3 substacks"
+        "substacks":[]
     }
 ]
 },

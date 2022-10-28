@@ -4,10 +4,8 @@ import { listSub } from "../Datauser/substasks";
 export const useAddListAndCardBoard=()=>{
     
 
-    const {setOpenAddList,setValorNewSubTask,valorNewSubTask,booleanSubTask,valueDelete,setValueDelete}=useContext(ListCardBoardContext);
-    const [title,setTitle]=useState<string>();
-    const [description,setDescription]=useState<string>();
-    const [substasks,setSubstasks]=useState<Array<string>>();
+    const {setOpenAddList,setValorNewSubTask,valorNewSubTask,booleanSubTask,valueDelete}=useContext(ListCardBoardContext);
+    
     
     console.log("list use ",listSub)
     const [listSubstask,setListSubstask]=useState<Array<any>>([]);
@@ -28,12 +26,12 @@ export const useAddListAndCardBoard=()=>{
     const submitDataCard=()=>{
     
     }
-
+    
    
     
     const mountSubstask=()=>{
                 
-            listSub.push({id:listSub.length+1,title:null})
+            listSub.push({id:listSub.length+1})
                 if(valorNewSubTask===false){
                     setValorNewSubTask(true)
                 }
@@ -53,6 +51,6 @@ export const useAddListAndCardBoard=()=>{
  
     },[booleanSubTask,listSub,valueDelete])
 
-    return {OpenAddList,CloseAddList,setTitle,setDescription,setSubstasks,listSub,mountSubstask,DataDelete}
+    return {OpenAddList,CloseAddList,listSub,mountSubstask,DataDelete}
 
 }
